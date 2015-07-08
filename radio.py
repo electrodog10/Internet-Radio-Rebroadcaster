@@ -1,21 +1,21 @@
 #!usr/bin/python2
 #Created by Harrison Gieselman and Lewis Callaway
+# -*- coding: utf-8 -*-
 
 from time import sleep
 from Adafruit_Si4713 import Adafruit_Si4713
 
-FMSTATION = 10230  
+FMSTATION = 10230
 TRANSMITPOWER = 115
 
-radio = Adafruit_Si4731
-	
-	
-radio.begin()
+radio = Adafruit_Si4713()
 
-	radio.setTXpower(POWER)
+if not radio.begin():
+        print "error! couldn't begin"
+else:
 
-	radio.tuneFM(FMSTATION)
-
+        radio.setTXpower(TRANSMITPOWER)
+        radio.tuneFM(FMSTATION)
 
 	radio.beginRDS()
 	radio.setRDSbuffer(“makezine.com”)
