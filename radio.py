@@ -10,10 +10,8 @@ TRANSMITPOWER = 115
 radio = Adafruit_Si4731
 	
 	
-if not radio.begin():
-	print "error! couldn't begin!"
+radio.begin()
 
-else:
 	radio.setTXpower(POWER)
 
 	radio.tuneFM(FMSTATION)
