@@ -10,18 +10,16 @@ TRANSMITPOWER = 115
 
 radio = Adafruit_Si4713()
 
-if not radio.begin():
-        print "error! couldn't begin"
-else:
+ radio.begin()
+       
 
         radio.setTXpower(TRANSMITPOWER)
         radio.tuneFM(FMSTATION)
+       
+        radio.beginRDS()
 
-	radio.beginRDS()
-	radio.setRDSbuffer(“makezine.com”)
 
 
-	while True:
 
 		radio.setRDSstation("Make")
 		sleep(10)
