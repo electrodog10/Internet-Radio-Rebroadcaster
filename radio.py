@@ -1,3 +1,4 @@
+
 #!usr/bin/python2
 #Created by Harrison Gieselman and Lewis Callaway
 # -*- coding: utf-8 -*-
@@ -10,29 +11,25 @@ TRANSMITPOWER = 115
 
 radio = Adafruit_Si4713()
 
- radio.begin()
-       
-
-        radio.setTXpower(TRANSMITPOWER)
-        radio.tuneFM(FMSTATION)
-       
-        radio.beginRDS()
+radio.begin()
 
 
+radio.setTXpower(TRANSMITPOWER)
+radio.tuneFM(FMSTATION)
+
+radio.beginRDS()
+
+radio.setRDSstation("Make")
+sleep(6)
 
 
-		radio.setRDSstation("Make")
-		sleep(10)
+radio.setRDSstation("Internet")
+sleep(6)
 
 
-		radio.setRDSstation("Internet")
-		sleep(5)
+radio.setRDSstation("Radio")
+sleep(6)
 
-
-		radio.setRDSstation("Radio")
-		sleep(5)
-
-		radio.setRDSstation("Stream")
-		sleep(5)
-
+radio.setRDSstation("Stream")
+sleep(6)
 
